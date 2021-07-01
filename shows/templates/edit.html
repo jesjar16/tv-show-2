@@ -1,0 +1,23 @@
+{% extends "base_form.html" %}
+
+{% block title %}Tv Shows-Edit Show{% endblock %}
+
+{% block heading_title %} Edit {{ this_show.title }} {% endblock %}
+
+{% block show_id %} {{ this_show.id }} {% endblock %}
+
+{% block form_action %}{% url 'my_update' show_id=this_show.id %}{% endblock %}
+
+{% block title_val %}{{ request.session.form_data.show_title }}{% endblock %}
+
+{% block network_val %}{{ request.session.form_data.show_network }}{% endblock %}
+
+{% block date_val %}{{ request.session.form_data.show_date }}{% endblock %}
+
+{% block description_val %}{{ request.session.form_data.show_description }}{% endblock %}
+
+{% block button_name %}Update{% endblock %}
+
+{% block form_link %}
+    <a href="{% url 'my_view' show_id=this_show.id %}" class="link-info">Go to Show</a>
+{% endblock %}

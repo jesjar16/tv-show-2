@@ -1,0 +1,19 @@
+{% extends "base_form.html" %}
+
+{% block title %}Tv Shows-Add Show{% endblock %}
+
+{% block heading_title %}Add Show{% endblock %}
+
+{% block back_link %}{% url 'my_shows' %}{% endblock %}
+
+{% block form_action %}{% url 'my_create' %}{% endblock %}
+
+{% block title_val %}{{ request.session.form_data.show_title }}{% endblock %}
+
+{% block network_val %}{{ request.session.form_data.show_network }}{% endblock %}
+
+{% block date_val %}{{ request.session.form_data.show_date }}{% endblock %}
+
+{% block description_val %}{{ request.session.form_data.show_description }}{% endblock %}
+
+{% block button_name %}Create{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Tv Shows-View Show{% endblock %}
+
+{% block heading_title %}
+    <div class="col-4 offset-3"><h1>View Show {{ this_show.id }}</h1></div>
+    <div class="col-2 text-end">
+        <a href="{% url 'my_shows' %}" class="link-info {% block link_visibility %}{% endblock %}">Go Back</a>
+    </div>
+{% endblock %}
+
+{% block content %}
+
+<div class="row mt-3 bg-light pt-2">
+    <div class="col-6 offset-3">
+        <p><b>Title:</b> {{ this_show.title }}</p>
+        <p><b>Network:</b> {{ this_show.network.title }}</p>
+        <p><b>Release Date:</b> {{ this_show.release_date }}</p>
+        <p><b>Description:</b> {{ this_show.description }}</p>
+        <p class="mb-5"><b>Last Updated:</b> {{ this_show.updated_at }} </p>
+    </div>
+</div>
+
+<div class="row bg-light">
+    <div class="col-6 offset-3 pb-3">
+            <a href="{% url 'my_edit' show_id=this_show.id %}" class="link-info mt-5">Edit</a> | 
+            <a href="{% url 'my_destroy' show_id=this_show.id %}" class="link-info">Delete</a>
+    </div>
+</div>
+{% endblock %}
