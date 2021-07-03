@@ -34,7 +34,7 @@ class ShowManager(models.Manager):
             yesterday = today_date - timedelta(days=1)
                 
             if release_date >= yesterday:
-                errors['show_date_emp'] = "Release date must be less than today's date"          
+                errors['show_date_val'] = "Release date must be less than today's date"          
        
         #checking description       
         if postData['show_description'] != '' and len(postData['show_description']) < 10:
